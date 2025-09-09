@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vaishnavi J. V – Software Engineer (Portfolio)</title>
+  <meta name="description" content="Portfolio of Vaishnavi J. V – Software Engineer" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#ffffff; --ink:#1b1f2a; --muted:#53607d; --accent:#5c67ff; --line:#e6e9f5; --chip:#f3f6ff; }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+    a{color:var(--accent);text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#ff8fd6,#ffd1e6);box-shadow:0 10px 20px rgba(255,143,214,.35)}
+    .links{display:flex;gap:18px}
+    .links a{color:var(--muted);font-weight:600}
+    .links a:hover{color:var(--ink)}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--ink)}
+    .btn:hover{box-shadow:0 6px 20px rgba(0,0,0,.06)}
+
+    /* flower background layer */
+    .flowers{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+    .flower{position:absolute;width:38px;height:38px;opacity:.25;filter:blur(.2px)}
+    @keyframes drift{0%{transform:translateY(110vh) rotate(0deg)}100%{transform:translateY(-10vh) rotate(360deg)}}
+
+    /* content cards */
+    .card{background:#fff;padding:20px;border-radius:16px;border:1px solid var(--line);box-shadow:0 10px 30px rgba(0,0,0,.05);position:relative;z-index:1}
+    h1{margin:0 0 8px;font-size:38px}
+    .subtitle{color:var(--muted);margin:0 0 14px}
+    .pills{display:flex;gap:8px;flex-wrap:wrap}
+    .pill{background:var(--chip);border:1px solid var(--line);color:#31406b;padding:6px 10px;border-radius:999px;font-size:12px}
+
+    section{scroll-margin-top:90px}
+    h2{font-size:28px;margin:24px 0 12px}
+    .projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+    .project{transition:transform .15s ease, box-shadow .15s ease}
+    .project:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.08)}
+    .project .thumb{height:135px;background:linear-gradient(135deg,#ffe3f2,#e8f0ff);display:flex;align-items:center;justify-content:center;color:#5d6ab0;font-weight:800;letter-spacing:.06em;border-bottom:1px solid var(--line)}
+
+    .timeline{display:grid;gap:12px}
+    .titem{padding:14px;border:1px solid var(--line);border-radius:14px;background:#fff}
+
+    /* modal */
+    .modal{position:fixed;inset:0;display:none;place-items:center;background:rgba(0,0,0,.4);z-index:20}
+    .modal.open{display:grid}
+    .sheet{max-width:900px;width:92%;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+    .sheet header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:#f7f8fe;border-bottom:1px solid var(--line)}
+    .sheet .content{padding:18px}
+
+    /* reveal */
+    .reveal{opacity:0;transform:translateY(8px);transition:opacity .5s ease, transform .5s ease}
+    .reveal.show{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+  <!-- animated floral background -->
+  <div class="flowers" id="flowers"></div>
+
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div style="font-weight:800">Vaishnavi J. V</div>
+          <small class="subtitle">Software Engineer</small>
+        </div>
+      </div>
+      <nav class="links">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#certs">Certifications</a>
+        <a href="#education">Education</a>
+        <a href="#publications">Publication</a>
+        <a href="#contact" class="btn">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card reveal">
+      <h1>Building dependable software & systems</h1>
+      <p class="subtitle">Java / Python / Spring Boot / REST APIs / AWS / Docker / Microservices / CI-CD</p>
+      <div class="pills">
+        <span class="pill">Java</span><span class="pill">Python</span><span class="pill">Spring Boot</span><span class="pill">REST</span><span class="pill">AWS</span><span class="pill">Docker</span><span class="pill">Kafka</span><span class="pill">MySQL</span><span class="pill">Jenkins</span>
+      </div>
+      <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn" href="#projects">See Projects</a>
+        <a class="btn" href="resume.pdf" target="_blank" rel="noreferrer">Download Résumé</a>
+        <a class="btn" href="https://github.com/jvvaishnavi" target="_blank">GitHub</a>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="reveal">
+      <h2>Projects</h2>
+      <div class="projects">
+        <article class="card project">
+          <div class="thumb">SPRING BOOT • KAFKA</div>
+          <div class="p24" style="padding:16px">
+            <h3>Real-time Analytics Platform (Humana)</h3>
+            <p>Java/Spring Boot microservices with Kafka streaming on AWS (EC2, S3, RDS, Lambda). +40% scalability, −25% latency.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" data-project="p1">View details</button></div>
+          </div>
+        </article>
+        <article class="card project">
+          <div class="thumb">SPRING BOOT • H2</div>
+          <div class="p24" style="padding:16px">
+            <h3>Event-Driven Microservices (JPMorgan Virtual)</h3>
+            <p>REST controllers, H2 in-memory DB, Kafka integration; modular service design and testing.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" data-project="p2">View details</button></div>
+          </div>
+        </article>
+        <article class="card project">
+          <div class="thumb">DJANGO • MYSQL</div>
+          <div class="p24" style="padding:16px">
+            <h3>Online Auction Platform</h3>
+            <p>Role-based access (merchant/auctioneer/customer/admin); 100+ users; 30% faster queries.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" data-project="p3">View details</button></div>
+          </div>
+        </article>
+        <article class="card project">
+          <div class="thumb">ASP.NET • MYSQL</div>
+          <div class="p24" style="padding:16px">
+            <h3>iCARE – Healthcare Document Management</h3>
+            <p>Secure patient records, doctor workflows, and prescriptions; admin role management.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" data-project="p4">View details</button></div>
+          </div>
+        </article>
+        <article class="card project">
+          <div class="thumb">JAVA • JSP</div>
+          <div class="p24" style="padding:16px">
+            <h3>Web-based Reporting Tool (NAU)</h3>
+            <p>Automated multi-source reporting with Servlets/JSP; saved ~5 hours per week across teams.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" data-project="p5">View details</button></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="reveal">
+      <h2>Skills</h2>
+      <div class="timeline">
+        <div class="titem"><strong>Languages:</strong> Java, Python, SQL, JavaScript</div>
+        <div class="titem"><strong>Frameworks:</strong> Spring Boot, Django, ASP.NET, React (fundamentals)</div>
+        <div class="titem"><strong>Cloud & DevOps:</strong> AWS (EC2, S3, RDS, Lambda), Docker, Kubernetes, Jenkins, Git</div>
+        <div class="titem"><strong>Data:</strong> MySQL, PostgreSQL, Redshift, Snowflake, Kafka, Airflow</div>
+        <div class="titem"><strong>Practices:</strong> Microservices, REST API Design, CI/CD, TDD, Agile</div>
+      </div>
+    </section>
+
+    <!-- CERTS / EDU / PUB -->
+    <section id="certs" class="reveal">
+      <h2>Certifications</h2>
+      <ul>
+        <li>SCRUM Foundation Professional Certificate — CertiProf</li>
+        <li>Pega CSA 8.4 • Pega CSSA 8.6</li>
+        <li>PlainID Platform Learning Path</li>
+        <li>OCI Foundations 2021 — Oracle</li>
+        <li>SQL Using MySQL and Database Design — Udemy</li>
+        <li>Python Programming Essentials — Udemy</li>
+        <li>Software Engineering Virtual Experience — JPMorgan (Forage, 2025)</li>
+      </ul>
+    </section>
+
+    <section id="education" class="reveal">
+      <h2>Education</h2>
+      <ul>
+        <li>M.S. Computer Science — Northern Arizona University (2022–2023)</li>
+        <li>B.Tech Computer Science — KL University (2018–2022)</li>
+      </ul>
+    </section>
+
+    <section id="publications" class="reveal">
+      <h2>Publication</h2>
+      <p><strong>A Study on the Class Imbalance Problem Using Genetic Algorithm</strong> — IEEE ICSSIT 2022.
+        <a href="https://ieeexplore.ieee.org/document/9716371" target="_blank" rel="noreferrer">View on IEEE Xplore</a>
+      </p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="card reveal">
+      <h2>Contact</h2>
+      <div class="pills" style="margin-bottom:8px">
+        <a class="btn" href="mailto:vaishureddy33@gmail.com">Email</a>
+        <a class="btn" href="https://www.linkedin.com/in/jvvaishnavi" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn" href="https://github.com/jvvaishnavi" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+      <small class="subtitle">© <span id="year"></span> Vaishnavi J. V — USA</small>
+    </section>
+  </main>
+
+  <!-- PROJECT DETAIL MODAL (populated by JS) -->
+  <div class="modal" id="projModal" role="dialog" aria-modal="true" aria-labelledby="projTitle">
+    <div class="sheet">
+      <header>
+        <strong id="projTitle">Project</strong>
+        <button class="btn" id="closeModal" aria-label="Close">Close</button>
+      </header>
+      <div class="content">
+        <div id="projBody"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // reveal on scroll
+    const io = new IntersectionObserver((ents)=>{
+      ents.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} });
+    }, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // animated flowers (same as before)
+    const svgFlower = encodeURIComponent(`<?xml version='1.0' encoding='UTF-8'?>
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+        <defs><radialGradient id='g' cx='50%' cy='50%'><stop offset='0%' stop-color='#ff8fd6'/><stop offset='100%' stop-color='#ffd1e6'/></radialGradient></defs>
+        <g transform='translate(50 50)'><g>
+          <ellipse rx='16' ry='32' fill='url(#g)' transform='rotate(0)'/>
+          <ellipse rx='16' ry='32' fill='url(#g)' transform='rotate(45)'/>
+          <ellipse rx='16' ry='32' fill='url(#g)' transform='rotate(90)'/>
+          <ellipse rx='16' ry='32' fill='url(#g)' transform='rotate(135)'/>
+          <circle r='10' fill='#fff5fb' stroke='#ffc0df' stroke-width='2'/>
+        </g></g>
+      </svg>`);
+    const flowers = document.getElementById('flowers');
+    const COUNT = 24;
+    for(let i=0;i<COUNT;i++){
+      const f = document.createElement('div');
+      f.className = 'flower';
+      f.style.left = Math.random()*100 + 'vw';
+      f.style.top = (80 + Math.random()*40) + 'vh';
+      const size = 24 + Math.random()*30;
+      f.style.width = f.style.height = size + 'px';
+      f.style.animation = `drift ${25 + Math.random()*25}s linear ${Math.random()*-50}s infinite`;
+      f.style.backgroundImage = `url("data:image/svg+xml,${svgFlower}")`;
+      f.style.backgroundSize = 'cover';
+      flowers.appendChild(f);
+    }
+
+    // project details database (no images)
+    const projects = {
+      p1: { title: 'Real-time Analytics Platform (Humana)', html: `
+          <p><strong>Stack:</strong> Java, Spring Boot, Kafka, AWS (EC2, S3, RDS, Lambda), Docker, Jenkins</p>
+          <ul>
+            <li>Designed microservices with idempotent Kafka consumers and retry/backoff.</li>
+            <li>Provisioned AWS infra (ALB, ASG) for autoscaling and high availability.</li>
+            <li>Optimized p95 latency by 25% via connection pooling & async I/O.</li>
+            <li>Blue/green deployments with zero-downtime using Jenkins pipelines.</li>
+            <li>Centralized logs/metrics; dashboards for throughput & error budgets.</li>
+          </ul>` },
+      p2: { title: 'Event-Driven Microservices (JPMorgan Virtual)', html: `
+          <p><strong>Stack:</strong> Spring Boot, H2, Kafka, JUnit</p>
+          <ul>
+            <li>Built REST controllers → services → repositories with clean layering.</li>
+            <li>Modeled domain entities and H2 schemas for rapid local testing.</li>
+            <li>Implemented Kafka producers/consumers with schema validation.</li>
+            <li>Wrote unit & integration tests (JUnit/MockMvc) for core flows.</li>
+            <li>Added contract tests to prevent breaking API changes.</li>
+          </ul>` },
+      p3: { title: 'Online Auction Platform', html: `
+          <p><strong>Stack:</strong> Django, Python, MySQL, HTML/CSS/JS</p>
+          <ul>
+            <li>Role-based access for merchants, auctioneers, customers, admins.</li>
+            <li>Normalized MySQL schema for items, lots, bids, and user actions.</li>
+            <li>Query tuning + caching for hot listings (≈30% faster pages).</li>
+            <li>Secure sessions & CSRF protection; input validation.</li>
+            <li>Admin dashboards for inventory, bids, and outcomes.</li>
+          </ul>` },
+      p4: { title: 'iCARE – Healthcare Document Management', html: `
+          <p><strong>Stack:</strong> ASP.NET, C#, MySQL</p>
+          <ul>
+            <li>Role-based workflows for workers, doctors, patients, and admins.</li>
+            <li>Secure CRUD for patient records; audit trails for compliance.</li>
+            <li>Prescription management linked to treatment history.</li>
+            <li>Parameterized queries and input sanitization to prevent injection.</li>
+            <li>Backups and restores with scheduled jobs.</li>
+          </ul>` },
+      p5: { title: 'Web-based Reporting Tool (NAU)', html: `
+          <p><strong>Stack:</strong> Java Servlets, JSP, JDBC</p>
+          <ul>
+            <li>Automated multi-source ingestion and standardized report templates.</li>
+            <li>Parameterized queries; connection pooling for performance.</li>
+            <li>Scheduled exports (CSV/PDF) and email notifications.</li>
+            <li>Access controls for teams; activity logs for auditing.</li>
+            <li>Saved ~5 hours/week of manual reporting.</li>
+          </ul>` }
+    };
+
+    // modal logic
+    const modal = document.getElementById('projModal');
+    const title = document.getElementById('projTitle');
+    const body = document.getElementById('projBody');
+    const closeBtn = document.getElementById('closeModal');
+    function openProject(id){ const p = projects[id]; if(!p) return; title.textContent = p.title; body.innerHTML = p.html; modal.classList.add('open'); }
+    function closeProject(){ modal.classList.remove('open'); }
+    document.querySelectorAll('[data-project]').forEach(btn=>btn.addEventListener('click',()=> openProject(btn.dataset.project)));
+    closeBtn.addEventListener('click', closeProject);
+    modal.addEventListener('click', (e)=>{ if(e.target===modal) closeProject(); });
+  </script>
+</body>
+</html>
