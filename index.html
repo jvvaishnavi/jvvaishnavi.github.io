@@ -56,14 +56,12 @@
     .reveal{opacity:0;transform:translateY(8px);transition:opacity .5s ease, transform .5s ease}
     .reveal.show{opacity:1;transform:none}
 
-    /* contact card */
-    .contact-card{display:grid;grid-template-columns:1fr 1fr;gap:12px;border:1px solid var(--line);border-radius:14px;padding:16px;background:#fff}
+    /* contact card (3 simple rows) */
+    .contact-card{display:grid;grid-template-columns:1fr;gap:12px;border:1px solid var(--line);border-radius:14px;padding:16px;background:#fff}
     .contact-item{display:flex;gap:10px;align-items:center;justify-content:space-between;border:1px dashed var(--line);border-radius:12px;padding:12px}
     .contact-item .label{font-weight:600;color:#3b4767}
     .contact-item .value{color:#1f2a44;word-break:break-word}
-    .contact-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
     .btn.mini{padding:6px 10px;border-radius:10px;font-size:12px}
-    @media (max-width:700px){ .contact-card{grid-template-columns:1fr} }
   </style>
 </head>
 <body>
@@ -95,7 +93,7 @@
       <h1>Building dependable software & systems</h1>
       <p class="subtitle">Python / Java / ETL / REST APIs / GCP / AWS / Docker / Microservices / CI-CD</p>
       <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
-        <a class="btn" href="#projects">See Projects</a>
+     
         <a class="btn" href="https://github.com/jvvaishnavi" target="_blank">GitHub</a>
       </div>
     </section>
@@ -212,69 +210,39 @@
       </p>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="card reveal">
-      <h2>Contact</h2>
+  <main class="container">
+</div>
 
-      <!-- Contact Card (edit the placeholders to your real details) -->
-      <div id="contactCard" class="contact-card"
-           data-name="Vaishnavi J. V"
-           data-email="vaishureddy33@gmail.com"
-           data-phone="+1 (507) 613-1016"
-           data-role="Software Engineer"
-           data-org="—"
-           data-location="USA"
-           data-linkedin="https://www.linkedin.com/in/jvvaishnavi"
-           data-github="https://github.com/jvvaishnavi">
 
-        <div class="contact-item">
-          <div class="label">Email</div>
-          <div class="value">
-            <a id="emailLink" href="mailto:vaishureddy33@gmail.com">vaishureddy33@gmail.com</a>
-            <button class="btn mini" data-copy="vaishureddy33@gmail.com">Copy</button>
-          </div>
-        </div>
+<div class="contact-item">
+<div class="label">Phone</div>
+<div class="value">
+<span>+1 (507) 613-1016</span>
+<button class="btn mini" data-copy="+1 (507) 613-1016">Copy</button>
+</div>
+</div>
 
-        <div class="contact-item">
-          <div class="label">Phone</div>
-          <div class="value">
-            <span id="phoneText">+1 (507) 613-1016</span>
-            <button class="btn mini" data-copy="+1 (507) 613-1016">Copy</button>
-          </div>
-        </div>
 
-        <div class="contact-item">
-          <div class="label">Location</div>
-          <div class="value"><span id="locText">USA</span></div>
-        </div>
+<div class="contact-item">
+<div class="label">LinkedIn</div>
+<div class="value">
+<a href="https://www.linkedin.com/in/jvvaishnavi" target="_blank" rel="noreferrer">jvvaishnavi</a>
+<button class="btn mini" data-copy="https://www.linkedin.com/in/jvvaishnavi">Copy</button>
+</div>
+</div>
+</div>
 
-        <div class="contact-item">
-          <div class="label">LinkedIn</div>
-          <div class="value">
-            <a id="linkedinLink" href="https://www.linkedin.com/in/jvvaishnavi" target="_blank" rel="noreferrer">jvvaishnavi</a>
-            <button class="btn mini" data-copy="https://www.linkedin.com/in/jvvaishnavi">Copy</button>
-          </div>
-        </div>
 
-        <div class="contact-item">
-          <div class="label">GitHub</div>
-          <div class="value">
-            <a id="githubLink" href="https://github.com/jvvaishnavi" target="_blank" rel="noreferrer">github.com/jvvaishnavi</a>
-            <button class="btn mini" data-copy="https://github.com/jvvaishnavi">Copy</button>
-          </div>
-        </div>
+<!-- Profile image at bottom -->
+<div class="profile-img">
+<img src="profile.jpg" alt="Vaishnavi J. V" />
+</div>
 
-        <div class="contact-actions">
-          <a class="btn" id="vcardBtn">Download vCard</a>
-          <a class="btn" id="emailMeBtn" href="mailto:vaishureddy33@gmail.com?subject=Hello%20Vaishnavi">Email Me</a>
-        </div>
-      </div>
 
-      <small class="subtitle" style="display:block;margin-top:12px;">© <span id="year"></span> Vaishnavi J. V — USA</small>
-    </section>
-  </main>
-
-  <!-- PROJECT DETAIL MODAL (populated by JS) -->
+<small class="subtitle" style="display:block;margin-top:12px;">© <span id="year"></span> Vaishnavi J. V — USA</small>
+</section>
+</main>
+  <!-- PROJECT DETAIL MODAL -->
   <div class="modal" id="projModal" role="dialog" aria-modal="true" aria-labelledby="projTitle">
     <div class="sheet">
       <header>
@@ -297,7 +265,7 @@
     }, {threshold:.12});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-    // animated flowers (same as before)
+    // animated flowers
     const svgFlower = encodeURIComponent(`<?xml version='1.0' encoding='UTF-8'?>
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
         <defs><radialGradient id='g' cx='50%' cy='50%'><stop offset='0%' stop-color='#ff8fd6'/><stop offset='100%' stop-color='#ffd1e6'/></radialGradient></defs>
@@ -324,7 +292,7 @@
       flowers.appendChild(f);
     }
 
-    // project details database (no images)
+    // projects modal (unchanged)
     const projects = {
       p1: { title: 'Real-time Analytics Platform (Humana)', html: `
           <p><strong>Stack:</strong> Java, Spring Boot, Kafka, AWS (EC2, S3, RDS, Lambda), Docker, Jenkins</p>
@@ -373,7 +341,6 @@
           </ul>` }
     };
 
-    // modal logic
     const modal = document.getElementById('projModal');
     const title = document.getElementById('projTitle');
     const body = document.getElementById('projBody');
@@ -384,7 +351,7 @@
     closeBtn.addEventListener('click', closeProject);
     modal.addEventListener('click', (e)=>{ if(e.target===modal) closeProject(); });
 
-    // contact helpers: copy + vCard
+    // copy helpers for contact fields
     document.querySelectorAll('[data-copy]').forEach(btn=>{
       btn.addEventListener('click',()=>{
         const text = btn.getAttribute('data-copy');
@@ -395,32 +362,6 @@
         }).catch(()=>{ /* ignore clipboard errors gracefully */ });
       });
     });
-
-    const vbtn = document.getElementById('vcardBtn');
-    if (vbtn) {
-      vbtn.addEventListener('click', ()=>{
-        const card = document.getElementById('contactCard').dataset;
-        const vcf =
-`BEGIN:VCARD
-VERSION:3.0
-N:${card.name}
-FN:${card.name}
-EMAIL;TYPE=INTERNET:${card.email}
-TEL;TYPE=CELL:${card.phone}
-TITLE:${card.role}
-ORG:${card.org}
-ADR;TYPE=WORK:;;${card.location};;;;
-URL:${card.linkedin}
-URL:${card.github}
-END:VCARD`;
-        const blob = new Blob([vcf], {type:'text/vcard'});
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url; a.download = 'vaishnavi.vcf';
-        document.body.appendChild(a); a.click(); a.remove();
-        URL.revokeObjectURL(url);
-      });
-    }
   </script>
 </body>
 </html>
