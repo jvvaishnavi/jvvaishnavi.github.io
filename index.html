@@ -20,7 +20,7 @@
     .links{display:flex;gap:18px}
     .links a{color:var(--muted);font-weight:600}
     .links a:hover{color:var(--ink)}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--ink)}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}
     .btn:hover{box-shadow:0 6px 20px rgba(0,0,0,.06)}
 
     /* flower background layer */
@@ -55,6 +55,15 @@
     /* reveal */
     .reveal{opacity:0;transform:translateY(8px);transition:opacity .5s ease, transform .5s ease}
     .reveal.show{opacity:1;transform:none}
+
+    /* contact card */
+    .contact-card{display:grid;grid-template-columns:1fr 1fr;gap:12px;border:1px solid var(--line);border-radius:14px;padding:16px;background:#fff}
+    .contact-item{display:flex;gap:10px;align-items:center;justify-content:space-between;border:1px dashed var(--line);border-radius:12px;padding:12px}
+    .contact-item .label{font-weight:600;color:#3b4767}
+    .contact-item .value{color:#1f2a44;word-break:break-word}
+    .contact-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .btn.mini{padding:6px 10px;border-radius:10px;font-size:12px}
+    @media (max-width:700px){ .contact-card{grid-template-columns:1fr} }
   </style>
 </head>
 <body>
@@ -84,9 +93,7 @@
   <main class="container">
     <section class="card reveal">
       <h1>Building dependable software & systems</h1>
-      <p class="subtitle">Java / Python / Spring Boot / REST APIs / AWS / Docker / Microservices / CI-CD</p>
-      
-      </div>
+      <p class="subtitle">Python / Java / ETL / REST APIs / GCP / AWS / Docker / Microservices / CI-CD</p>
       <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
         <a class="btn" href="#projects">See Projects</a>
         <a class="btn" href="https://github.com/jvvaishnavi" target="_blank">GitHub</a>
@@ -94,29 +101,28 @@
     </section>
 
     <!-- ABOUT ME -->
-<section id="about" class="card reveal">
-  <h2>About Me</h2>
-  <p>
-    Hi, I’m <strong>Vaishnavi J. V</strong>, a Software Engineer with over <strong>3 years of combined experience</strong> 
-    through internships, teaching assistant roles, and professional projects. My journey has allowed me to work 
-    across different areas of software development, from building backend systems to designing intuitive user interfaces.
-  </p>
-  <p>
-    During my undergrad and master’s, I developed a strong interest in <strong>UI/UX design</strong> and completed 
-    a specialization in it. This taught me how to look at software not just from the technical side, but also from the 
-    user’s perspective—making sure what I build is both reliable and enjoyable to use.
-  </p>
-  <p>
-    Along the way, I’ve earned certifications in <strong>Scrum, Pega (CSA & CSSA), Oracle SQL, Python, Software 
-    Engineering, and Cloud Computing</strong>, which strengthened my skills and gave me exposure to real-world 
-    tools and best practices.
-  </p>
-  <p>
-    I love solving problems, learning new technologies, and collaborating with teams to bring ideas to life. 
-    My goal is simple: keep growing as an engineer while building software that truly makes an impact.
-  </p>
-</section>
-
+    <section id="about" class="card reveal">
+      <h2>About Me</h2>
+      <p>
+        Hi, I’m <strong>Vaishnavi J. V</strong>, a Software Engineer with over <strong>3 years of combined experience</strong>
+        through internships, teaching assistant roles, and professional projects. My journey has allowed me to work
+        across different areas of software development, from building backend systems to designing intuitive user interfaces.
+      </p>
+      <p>
+        During my undergrad and master’s, I developed an interest in <strong>UI/UX design</strong> and completed
+        a specialization in it. This taught me how to look at software not just from the technical side, but also from the
+        user’s perspective—making sure what I build is both reliable and enjoyable to use.
+      </p>
+      <p>
+        Along the way, I’ve earned certifications in <strong>Scrum, Pega (CSA & CSSA), Oracle SQL, Python, Software
+        Engineering, and Cloud Computing</strong>, which strengthened my skills and gave me exposure to real-world
+        tools and best practices.
+      </p>
+      <p>
+        I love solving problems, learning new technologies, and collaborating with teams to bring ideas to life.
+        My goal is simple: keep growing as an engineer while building software that truly makes an impact.
+      </p>
+    </section>
 
     <!-- PROJECTS -->
     <section id="projects" class="reveal">
@@ -124,7 +130,7 @@
       <div class="projects">
         <article class="card project">
           <div class="thumb">SPRING BOOT • KAFKA</div>
-          <div class="p24" style="padding:16px">
+          <div style="padding:16px">
             <h3>Real-time Analytics Platform (Humana)</h3>
             <p>Java/Spring Boot microservices with Kafka streaming on AWS (EC2, S3, RDS, Lambda). +40% scalability, −25% latency.</p>
             <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" data-project="p1">View details</button></div>
@@ -132,7 +138,7 @@
         </article>
         <article class="card project">
           <div class="thumb">SPRING BOOT • H2</div>
-          <div class="p24" style="padding:16px">
+          <div style="padding:16px">
             <h3>Event-Driven Microservices (JPMorgan Virtual)</h3>
             <p>REST controllers, H2 in-memory DB, Kafka integration; modular service design and testing.</p>
             <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" data-project="p2">View details</button></div>
@@ -140,7 +146,7 @@
         </article>
         <article class="card project">
           <div class="thumb">DJANGO • MYSQL</div>
-          <div class="p24" style="padding:16px">
+          <div style="padding:16px">
             <h3>Online Auction Platform</h3>
             <p>Role-based access (merchant/auctioneer/customer/admin); 100+ users; 30% faster queries.</p>
             <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" data-project="p3">View details</button></div>
@@ -148,7 +154,7 @@
         </article>
         <article class="card project">
           <div class="thumb">ASP.NET • MYSQL</div>
-          <div class="p24" style="padding:16px">
+          <div style="padding:16px">
             <h3>iCARE – Healthcare Document Management</h3>
             <p>Secure patient records, doctor workflows, and prescriptions; admin role management.</p>
             <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" data-project="p4">View details</button></div>
@@ -156,7 +162,7 @@
         </article>
         <article class="card project">
           <div class="thumb">JAVA • JSP</div>
-          <div class="p24" style="padding:16px">
+          <div style="padding:16px">
             <h3>Web-based Reporting Tool (NAU)</h3>
             <p>Automated multi-source reporting with Servlets/JSP; saved ~5 hours per week across teams.</p>
             <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" data-project="p5">View details</button></div>
@@ -209,12 +215,62 @@
     <!-- CONTACT -->
     <section id="contact" class="card reveal">
       <h2>Contact</h2>
-      <div class="pills" style="margin-bottom:8px">
-        <a class="btn" href="mailto:vaishureddy33@gmail.com">Email</a>
-        <a class="btn" href="https://www.linkedin.com/in/jvvaishnavi" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a class="btn" href="https://github.com/jvvaishnavi" target="_blank" rel="noreferrer">GitHub</a>
+
+      <!-- Contact Card (edit the placeholders to your real details) -->
+      <div id="contactCard" class="contact-card"
+           data-name="Vaishnavi J. V"
+           data-email="vaishureddy33@gmail.com"
+           data-phone="+1 (507) 613-1016"
+           data-role="Software Engineer"
+           data-org="—"
+           data-location="USA"
+           data-linkedin="https://www.linkedin.com/in/jvvaishnavi"
+           data-github="https://github.com/jvvaishnavi">
+
+        <div class="contact-item">
+          <div class="label">Email</div>
+          <div class="value">
+            <a id="emailLink" href="mailto:vaishureddy33@gmail.com">vaishureddy33@gmail.com</a>
+            <button class="btn mini" data-copy="vaishureddy33@gmail.com">Copy</button>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="label">Phone</div>
+          <div class="value">
+            <span id="phoneText">+1 (507) 613-1016</span>
+            <button class="btn mini" data-copy="+1 (507) 613-1016">Copy</button>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="label">Location</div>
+          <div class="value"><span id="locText">USA</span></div>
+        </div>
+
+        <div class="contact-item">
+          <div class="label">LinkedIn</div>
+          <div class="value">
+            <a id="linkedinLink" href="https://www.linkedin.com/in/jvvaishnavi" target="_blank" rel="noreferrer">jvvaishnavi</a>
+            <button class="btn mini" data-copy="https://www.linkedin.com/in/jvvaishnavi">Copy</button>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="label">GitHub</div>
+          <div class="value">
+            <a id="githubLink" href="https://github.com/jvvaishnavi" target="_blank" rel="noreferrer">github.com/jvvaishnavi</a>
+            <button class="btn mini" data-copy="https://github.com/jvvaishnavi">Copy</button>
+          </div>
+        </div>
+
+        <div class="contact-actions">
+          <a class="btn" id="vcardBtn">Download vCard</a>
+          <a class="btn" id="emailMeBtn" href="mailto:vaishureddy33@gmail.com?subject=Hello%20Vaishnavi">Email Me</a>
+        </div>
       </div>
-      <small class="subtitle">© <span id="year"></span> Vaishnavi J. V — USA</small>
+
+      <small class="subtitle" style="display:block;margin-top:12px;">© <span id="year"></span> Vaishnavi J. V — USA</small>
     </section>
   </main>
 
@@ -327,6 +383,44 @@
     document.querySelectorAll('[data-project]').forEach(btn=>btn.addEventListener('click',()=> openProject(btn.dataset.project)));
     closeBtn.addEventListener('click', closeProject);
     modal.addEventListener('click', (e)=>{ if(e.target===modal) closeProject(); });
+
+    // contact helpers: copy + vCard
+    document.querySelectorAll('[data-copy]').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const text = btn.getAttribute('data-copy');
+        navigator.clipboard.writeText(text).then(()=>{
+          const prev = btn.textContent;
+          btn.textContent = 'Copied!';
+          setTimeout(()=>btn.textContent = prev, 1200);
+        }).catch(()=>{ /* ignore clipboard errors gracefully */ });
+      });
+    });
+
+    const vbtn = document.getElementById('vcardBtn');
+    if (vbtn) {
+      vbtn.addEventListener('click', ()=>{
+        const card = document.getElementById('contactCard').dataset;
+        const vcf =
+`BEGIN:VCARD
+VERSION:3.0
+N:${card.name}
+FN:${card.name}
+EMAIL;TYPE=INTERNET:${card.email}
+TEL;TYPE=CELL:${card.phone}
+TITLE:${card.role}
+ORG:${card.org}
+ADR;TYPE=WORK:;;${card.location};;;;
+URL:${card.linkedin}
+URL:${card.github}
+END:VCARD`;
+        const blob = new Blob([vcf], {type:'text/vcard'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = 'vaishnavi.vcf';
+        document.body.appendChild(a); a.click(); a.remove();
+        URL.revokeObjectURL(url);
+      });
+    }
   </script>
 </body>
 </html>
