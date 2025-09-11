@@ -97,6 +97,19 @@
       </div>
     </section>
 
+   <!-- SKILLS -->
+    <section id="skills" class="reveal">
+      <h2>Skills</h2>
+      <div class="timeline">
+        <div class="titem"><strong>Languages:</strong> Java, Python, SQL, JavaScript</div>
+        <div class="titem"><strong>Frameworks:</strong> Spring Boot, Django, ASP.NET, React (fundamentals)</div>
+        <div class="titem"><strong>Cloud & DevOps:</strong> AWS (EC2, S3, RDS, Lambda), GCP (BigQuery, Dataproc, Cloud Composer), Docker, Kubernetes, Jenkins, Git</div>
+        <div class="titem"><strong>Data:</strong> MySQL, PostgreSQL, Redshift, Snowflake, Kafka, Airflow, Machine Learning (scikit-learn, TensorFlow, PyTorch)</div>
+        <div class="titem"><strong>Practices:</strong> Microservices, REST API Design, CI/CD, TDD, Agile</div>
+      </div>
+    </section>
+
+    
     <!-- ABOUT ME -->
     <section id="about" class="card reveal">
       <h2>About Me</h2>
@@ -165,21 +178,19 @@
             <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" data-project="p5">View details</button></div>
           </div>
         </article>
+        <article class="card project">
+          <div class="thumb">GCP • BIGQUERY</div>
+          <div style="padding:16px">
+            <h3>Cloud-native Reporting Pipeline (GCP)</h3>
+            <p>Serverless ETL on GCP using Cloud Run/Functions, Pub/Sub, and BigQuery; scheduled via Cloud Composer with exports to Cloud Storage.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn" data-project="p6">View details</button></div>
+          </div>
+        </article>
+
       </div>
     </section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="reveal">
-      <h2>Skills</h2>
-      <div class="timeline">
-        <div class="titem"><strong>Languages:</strong> Java, Python, SQL, JavaScript</div>
-        <div class="titem"><strong>Frameworks:</strong> Spring Boot, Django, ASP.NET, React (fundamentals)</div>
-        <div class="titem"><strong>Cloud & DevOps:</strong> AWS (EC2, S3, RDS, Lambda), GCP (BigQuery, Dataproc, Cloud Composer), Docker, Kubernetes, Jenkins, Git</div>
-        <div class="titem"><strong>Data:</strong> MySQL, PostgreSQL, Redshift, Snowflake, Kafka, Airflow</div>
-        <div class="titem"><strong>Practices:</strong> Microservices, REST API Design, CI/CD, TDD, Agile</div>
-      </div>
-    </section>
-
+ 
     <!-- CERTS / EDU / PUB -->
     <section id="certs" class="reveal">
       <h2>Certifications</h2>
@@ -346,7 +357,17 @@
             <li>Scheduled exports (CSV/PDF) and email notifications.</li>
             <li>Access controls for teams; activity logs for auditing.</li>
             <li>Saved ~5 hours/week of manual reporting.</li>
-          </ul>` }
+          </ul>` },
+      p6: { title: 'Cloud-native Reporting Pipeline (GCP)', html: `
+          <p><strong>Stack:</strong> GCP (Cloud Run, Cloud Functions, Pub/Sub, BigQuery, Cloud Storage, Cloud Composer), Python</p>
+          <ul>
+            <li>Built a serverless ETL: Pub/Sub ingests CSV/JSON events; Cloud Functions validate and land raw files into Cloud Storage.</li>
+            <li>Cloud Run service performs transformations and loads partitioned tables in <strong>BigQuery</strong> (daily partitions + clustering).</li>
+            <li>Orchestrated end-to-end with <strong>Cloud Composer</strong> (Airflow): DAGs for ingest → transform → load → export.</li>
+            <li>Automated report exports to GCS; lifecycle rules archive older artifacts to Nearline for cost savings.</li>
+            <li>Set fine-grained IAM roles and configured Cloud Monitoring dashboards + alerting (latency, failures, cost).</li>
+            </ul>` }
+
     };
 
     const modal = document.getElementById('projModal');
